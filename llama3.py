@@ -1,6 +1,8 @@
-
+from dotenv import load_dotenv
+from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
-from langchain_openai import ChatOpenAI
+from langchain_ollama import  ChatOllama
+
 information="""
 Elon Reeve Musk FRS (/ˈiːlɒn/; born June 28, 1971) is a businessman known for his key roles in the space company SpaceX and the automotive company Tesla, Inc. His other involvements include ownership of X Corp., the company that operates the social media platform X (formerly Twitter), and his role in the founding of the Boring Company, xAI, Neuralink, and OpenAI. In November 2024, United States president-elect Donald Trump appointed Musk as the co-chair of the proposed Department of Government Efficiency (DOGE) in the second Trump administration. Musk is the wealthiest individual in the world; as of November 2024, Forbes estimates his net worth to be US$304 billion.[2]
 
@@ -12,23 +14,15 @@ Musk's actions and expressed views have made him a polarizing figure. He has bee
 
 In early 2024, Musk became active in American politics as a vocal and financial supporter of Donald Trump, becoming Trump's second-largest individual donor in October 2024. In November 2024, Trump announced that he had chosen Musk along with Vivek Ramaswamy to co-lead the Department of Government Efficiency (DOGE), a new advisory board which aims to improve government efficiency through measures such as slashing "excess regulations" and cutting "wasteful expenditures".
 """
-from dotenv import load_dotenv
-import  os
+
 if __name__ == "__main__":
-    load_dotenv()
     summary_template="""
         given the information {information} about a person from I want you to create:
         1. a short summary
         2. two interesting facts about them
     """
-    summary_prompt_template = PromptTemplate(input__variables=["information"],template=summary_template)
-
-    """ 
-        An instance of ChatOpenAI using the "gpt-3.5-turbo" model is created with a temperature setting of 0,
-        which means the responses will be more deterministic, not creative.
-    """
-    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
-    chain = summary_prompt_template | llm
-    # seamless integration of the prompt to the LLM model
-    res = chain.invoke(input={"information": information})
+    summary_prompt_template=PromptTemplate(input__variables=["information"],template=summary_template)
+    llm = ChatOllama(model="llama3")
+    chain = summary_prompt_template | llm | StrOutputParser()
+    res = chain.invoke(input={"information":information})
     print(res)

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2fbe5cffac25b427048647e8cecf7246c20b158e004eef254626b50c0d0da943"
+            "sha256": "5fe1bfc39632fa9561bd9e38b489e6be68b91aa3624c773c632ae55dd52426fd"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -544,6 +544,15 @@
             "markers": "python_version >= '3.9' and python_version < '4.0'",
             "version": "==0.3.21"
         },
+        "langchain-ollama": {
+            "hashes": [
+                "sha256:250ad9f3edce1a0ca16e4fad19f783ac728d7d76888ba952c462cd9f680353f7",
+                "sha256:aa5b794599652494a07fd27b22784854480cd4c793f0db5e81ebeccc2affd135"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.9' and python_version < '4.0'",
+            "version": "==0.2.0"
+        },
         "langchain-openai": {
             "hashes": [
                 "sha256:2723015e56879f9e5edfcb175fdbec6c296c1b3bf65caad28579ce9c4d1bd652",
@@ -725,6 +734,14 @@
             ],
             "markers": "python_version >= '3.9'",
             "version": "==1.26.4"
+        },
+        "ollama": {
+            "hashes": [
+                "sha256:8c6b5e7ff80dd0b8692150b03359f60bac7ca162b088c604069409142a684ad3",
+                "sha256:b6fb16aa5a3652633e1716acb12cf2f44aa18beb229329e46a0302734822dfad"
+            ],
+            "markers": "python_version >= '3.8' and python_version < '4.0'",
+            "version": "==0.4.1"
         },
         "openai": {
             "hashes": [
@@ -945,11 +962,11 @@
         },
         "pydantic": {
             "hashes": [
-                "sha256:a4daca2dc0aa429555e0656d6bf94873a7dc5f54ee42b1f5873d666fb3f35560",
-                "sha256:a8d20db84de64cf4a7d59e899c2caf0fe9d660c7cfc482528e7020d7dd189a7e"
+                "sha256:2bc2d7f17232e0841cbba4641e65ba1eb6fafb3a08de3a091ff3ce14a197c4fa",
+                "sha256:cfb96e45951117c3024e6b67b25cdc33a3cb7b2fa62e239f7af1378358a1d99e"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==2.10.1"
+            "version": "==2.10.2"
         },
         "pydantic-core": {
             "hashes": [
@@ -1056,6 +1073,15 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==2.27.1"
+        },
+        "python-dotenv": {
+            "hashes": [
+                "sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca",
+                "sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==1.0.1"
         },
         "pyyaml": {
             "hashes": [
